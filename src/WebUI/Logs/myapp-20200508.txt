@@ -1,0 +1,60 @@
+2020-05-08T21:07:47.6995919-04:00  [INF] Entity Framework Core "3.1.0" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=DWork.CollegeSystem.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null " (9958f5bb)
+2020-05-08T21:07:48.4067752-04:00  [INF] Executed DbCommand ("19"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2020-05-08T21:07:48.4630389-04:00  [INF] Executed DbCommand ("43"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2020-05-08T21:07:48.4693391-04:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2020-05-08T21:07:48.4720710-04:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2020-05-08T21:07:48.5109537-04:00  [INF] Executed DbCommand ("31"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2020-05-08T21:07:48.5516075-04:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2020-05-08T21:07:48.6139618-04:00  [INF] User profile is available. Using '"C:\Users\dhewage\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2020-05-08T21:07:49.0171042-04:00  [INF] Executed DbCommand ("66"ms) [Parameters=["@__defaultUser_UserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN NOT EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]
+        WHERE ([a].[UserName] = @__defaultUser_UserName_0) AND [a].[UserName] IS NOT NULL) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END" (0723d8ff)
+2020-05-08T21:07:49.0398645-04:00  [INF] Executed DbCommand ("11"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [TodoLists] AS [t]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END" (0723d8ff)
+2020-05-08T21:07:49.2605056-04:00  [INF] Starting IdentityServer4 version "3.0.0.0" (8add0571)
+2020-05-08T21:07:49.2862767-04:00  [INF] Configuring local API resource 'DWork.CollegeSystem.WebUIAPI'. (e7d0046a)
+2020-05-08T21:07:49.2972482-04:00  [INF] Configuring client 'DWork.CollegeSystem.WebUI'. (340699b2)
+2020-05-08T21:07:49.3693662-04:00  [INF] Loading development key at 'C:\DWork\APIs\DWork.CollegeSystem\src\WebUI\obj/tempkey.json'. (caff7bf1)
+2020-05-08T21:07:49.6304576-04:00  [INF] Resource 'DWork.CollegeSystem.WebUIAPI' allows all applications. (789d8029)
+2020-05-08T21:07:49.6365616-04:00  [INF] Identity resource 'openid' allows all applications. (8094d923)
+2020-05-08T21:07:49.6384311-04:00  [INF] Identity resource 'profile' allows all applications. (fa036345)
+2020-05-08T21:07:49.6863388-04:00  [INF] Using explicitly configured authentication scheme "Identity.Application" for IdentityServer (046a3520)
+2020-05-08T21:07:50.1182438-04:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2020-05-08T21:07:50.1413740-04:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2020-05-08T21:07:50.1438159-04:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-05-08T21:07:50.1456824-04:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-05-08T21:07:50.1473374-04:00  [INF] Content root path: "C:\DWork\APIs\DWork.CollegeSystem\src\WebUI" (b5d60022)
+2020-05-08T21:08:05.8317342-04:00 0HLVJMLN07N6J:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/authors application/json 20 (ca22a1cb)
+2020-05-08T21:08:06.2257660-04:00 0HLVJMLN07N6J:00000001 [INF] Executing endpoint '"DWork.CollegeSystem.WebUI.Controllers.AuthorsController.Get (DWork.CollegeSystem.WebUI)"' (500cc934)
+2020-05-08T21:08:06.2807778-04:00 0HLVJMLN07N6J:00000001 [INF] Route matched with "{action = \"Get\", controller = \"Authors\", page = \"\", area = \"\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[System.Collections.Generic.IEnumerable`1[DWork.CollegeSystem.Application.Authors.Queries.GetAuthors.AuthorDto]] Get()" on controller "DWork.CollegeSystem.WebUI.Controllers.AuthorsController" ("DWork.CollegeSystem.WebUI"). (122b2fdf)
+2020-05-08T21:08:06.4154553-04:00 0HLVJMLN07N6J:00000001 [INF] Executing action method "DWork.CollegeSystem.WebUI.Controllers.AuthorsController.Get (DWork.CollegeSystem.WebUI)" - Validation state: Valid (dad538d7)
+2020-05-08T21:08:06.4398022-04:00 0HLVJMLN07N6J:00000001 [INF] DWork.CollegeSystem Request: "GetAuthorsQuery" "" "" GetAuthorsQuery {  } (e93aa6c9)
+2020-05-08T21:08:06.4627389-04:00 0HLVJMLN07N6J:00000001 [INF] Handling GetAuthorsQuery (90e03c32)
+2020-05-08T21:08:06.7778246-04:00 0HLVJMLN07N6J:00000001 [INF] Entity Framework Core "3.1.0" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=DWork.CollegeSystem.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null " (9958f5bb)
+2020-05-08T21:08:06.9348618-04:00 0HLVJMLN07N6J:00000001 [INF] Executed DbCommand ("46"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[DateOfBirth], [a].[Id], [a].[Created], [a].[CreatedBy], [a].[FirstName], [a].[LastModified], [a].[LastModifiedBy], [a].[LastName], [a].[MainCategory]
+FROM [Authors] AS [a]" (0723d8ff)
+2020-05-08T21:08:07.0461848-04:00 0HLVJMLN07N6J:00000001 [INF] Handled GetAuthorsQuery (53b9d127)
+2020-05-08T21:08:07.0559889-04:00 0HLVJMLN07N6J:00000001 [WRN] DWork.CollegeSystem Long Running Request: "GetAuthorsQuery" (589 milliseconds) "" "" GetAuthorsQuery {  } (e64ad07d)
+2020-05-08T21:08:07.0709427-04:00 0HLVJMLN07N6J:00000001 [INF] Executed action method "DWork.CollegeSystem.WebUI.Controllers.AuthorsController.Get (DWork.CollegeSystem.WebUI)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 643.8145ms. (50a9e262)
+2020-05-08T21:08:07.0818758-04:00 0HLVJMLN07N6J:00000001 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[DWork.CollegeSystem.Application.Authors.Queries.GetAuthors.AuthorDto, DWork.CollegeSystem.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-05-08T21:08:07.2016030-04:00 0HLVJMLN07N6J:00000001 [INF] Executed action "DWork.CollegeSystem.WebUI.Controllers.AuthorsController.Get (DWork.CollegeSystem.WebUI)" in 907.1648ms (afa2e885)
+2020-05-08T21:08:07.2055185-04:00 0HLVJMLN07N6J:00000001 [INF] Executed endpoint '"DWork.CollegeSystem.WebUI.Controllers.AuthorsController.Get (DWork.CollegeSystem.WebUI)"' (99874f2b)
+2020-05-08T21:08:07.2249902-04:00 0HLVJMLN07N6J:00000001 [INF] Request finished in 1395.3049ms 200 application/json; charset=utf-8 (791a596a)

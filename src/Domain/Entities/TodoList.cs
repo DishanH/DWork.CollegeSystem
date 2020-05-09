@@ -12,9 +12,9 @@ namespace DWork.CollegeSystem.Domain.Entities
 
         public int Id { get; set; }
 
-        public string Title { get; set; }
+        public string Title { get; set; } = string.Empty;
 
-        public string Colour { get; set; }
+        public string Colour { get; set; } = string.Empty;
 
         public IList<TodoItem> Items { get; set; }
     }

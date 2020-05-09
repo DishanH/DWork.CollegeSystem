@@ -52,6 +52,12 @@ namespace DWork.CollegeSystem.Domain.ValueObjects
         {
             yield return Domain;
             yield return Name;
+
+            //sub collection
+            //foreach (Tenant tenant in Tenants)
+            //{
+            //    yield return tenant;
+            //}
         }
     }
 }

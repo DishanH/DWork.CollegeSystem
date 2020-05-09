@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DWork.CollegeSystem.WebUI.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class TodoListsController : ApiController
     {
         [HttpGet]

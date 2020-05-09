@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace DWork.CollegeSystem.Application.Common.Behaviours
 {
+    //IRequestPreProcessor Process method executes before calling the Handle method on your handler
     public class RequestLogger<TRequest> : IRequestPreProcessor<TRequest>
     {
         private readonly ILogger _logger;
