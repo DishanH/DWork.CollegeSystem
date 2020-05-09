@@ -1,0 +1,71 @@
+2020-05-09T12:44:38.8517539-04:00  [INF] Entity Framework Core "3.1.0" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=DWork.CollegeSystem.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null " (9958f5bb)
+2020-05-09T12:44:39.4243096-04:00  [INF] Executed DbCommand ("27"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2020-05-09T12:44:39.4726254-04:00  [INF] Executed DbCommand ("35"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2020-05-09T12:44:39.4790180-04:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2020-05-09T12:44:39.4818224-04:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2020-05-09T12:44:39.4936925-04:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2020-05-09T12:44:39.5164736-04:00  [INF] No migrations were applied. The database is already up to date. (503cba9d)
+2020-05-09T12:44:39.5667715-04:00  [INF] User profile is available. Using '"C:\Users\dhewage\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2020-05-09T12:44:39.9117448-04:00  [INF] Executed DbCommand ("50"ms) [Parameters=["@__defaultUser_UserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN NOT EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]
+        WHERE ([a].[UserName] = @__defaultUser_UserName_0) AND [a].[UserName] IS NOT NULL) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END" (0723d8ff)
+2020-05-09T12:44:39.9305171-04:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [TodoLists] AS [t]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END" (0723d8ff)
+2020-05-09T12:44:40.1036199-04:00  [INF] Starting IdentityServer4 version "3.0.0.0" (8add0571)
+2020-05-09T12:44:40.1187342-04:00  [INF] Configuring local API resource 'DWork.CollegeSystem.WebUIAPI'. (e7d0046a)
+2020-05-09T12:44:40.1286933-04:00  [INF] Configuring client 'DWork.CollegeSystem.WebUI'. (340699b2)
+2020-05-09T12:44:40.1831313-04:00  [INF] Loading development key at 'C:\DWork\APIs\DWork.CollegeSystem\src\WebUI\obj/tempkey.json'. (caff7bf1)
+2020-05-09T12:44:40.3956937-04:00  [INF] Resource 'DWork.CollegeSystem.WebUIAPI' allows all applications. (789d8029)
+2020-05-09T12:44:40.4014023-04:00  [INF] Identity resource 'openid' allows all applications. (8094d923)
+2020-05-09T12:44:40.4028997-04:00  [INF] Identity resource 'profile' allows all applications. (fa036345)
+2020-05-09T12:44:40.4194547-04:00  [INF] Using explicitly configured authentication scheme "Identity.Application" for IdentityServer (046a3520)
+2020-05-09T12:44:40.4212407-04:00  [DBG] Using "IdentityServerJwt" as default ASP.NET Core scheme for authentication (0e978528)
+2020-05-09T12:44:40.4229338-04:00  [DBG] Using "Identity.External" as default ASP.NET Core scheme for sign-in (efa4d8bf)
+2020-05-09T12:44:40.4246296-04:00  [DBG] Using "Identity.External" as default ASP.NET Core scheme for sign-out (af69d411)
+2020-05-09T12:44:40.4262565-04:00  [DBG] Using "IdentityServerJwt" as default ASP.NET Core scheme for challenge (a98173a7)
+2020-05-09T12:44:40.4279420-04:00  [DBG] Using "IdentityServerJwt" as default ASP.NET Core scheme for forbid (0f42bc5a)
+2020-05-09T12:44:40.7319129-04:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2020-05-09T12:44:40.7638053-04:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2020-05-09T12:44:40.7673180-04:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-05-09T12:44:40.7701028-04:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-05-09T12:44:40.7724678-04:00  [INF] Content root path: "C:\DWork\APIs\DWork.CollegeSystem\src\WebUI" (b5d60022)
+2020-05-09T12:44:44.9578958-04:00 0HLVK713L00KQ:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/authors application/json 20 (ca22a1cb)
+2020-05-09T12:44:45.0680157-04:00 0HLVK713L00KQ:00000001 [DBG] Login Url: "/Identity/Account/Login" (4c3637df)
+2020-05-09T12:44:45.0714912-04:00 0HLVK713L00KQ:00000001 [DBG] Login Return Url Parameter: "ReturnUrl" (d7f52555)
+2020-05-09T12:44:45.0741744-04:00 0HLVK713L00KQ:00000001 [DBG] Logout Url: "/Identity/Account/Logout" (0e25d80b)
+2020-05-09T12:44:45.0767334-04:00 0HLVK713L00KQ:00000001 [DBG] ConsentUrl Url: "/consent" (8c361a61)
+2020-05-09T12:44:45.0791188-04:00 0HLVK713L00KQ:00000001 [DBG] Consent Return Url Parameter: "returnUrl" (86725be5)
+2020-05-09T12:44:45.0818636-04:00 0HLVK713L00KQ:00000001 [DBG] Error Url: "/home/error" (78f587f6)
+2020-05-09T12:44:45.0858386-04:00 0HLVK713L00KQ:00000001 [DBG] Error Id Parameter: "errorId" (6647d385)
+2020-05-09T12:44:45.1330913-04:00 0HLVK713L00KQ:00000001 [INF] Executing endpoint '"DWork.CollegeSystem.WebUI.Controllers.AuthorsController.Get (DWork.CollegeSystem.WebUI)"' (500cc934)
+2020-05-09T12:44:45.1705602-04:00 0HLVK713L00KQ:00000001 [INF] Route matched with "{action = \"Get\", controller = \"Authors\", page = \"\", area = \"\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[System.Collections.Generic.IEnumerable`1[DWork.CollegeSystem.Application.Authors.Queries.GetAuthors.AuthorDto]] Get()" on controller "DWork.CollegeSystem.WebUI.Controllers.AuthorsController" ("DWork.CollegeSystem.WebUI"). (122b2fdf)
+2020-05-09T12:44:45.3130169-04:00 0HLVK713L00KQ:00000001 [INF] Executing action method "DWork.CollegeSystem.WebUI.Controllers.AuthorsController.Get (DWork.CollegeSystem.WebUI)" - Validation state: Valid (dad538d7)
+2020-05-09T12:44:45.3377986-04:00 0HLVK713L00KQ:00000001 [INF] DWork.CollegeSystem Request: "GetAuthorsQuery" "" "" GetAuthorsQuery {  } (e93aa6c9)
+2020-05-09T12:44:45.3585955-04:00 0HLVK713L00KQ:00000001 [INF] Handling GetAuthorsQuery (90e03c32)
+2020-05-09T12:44:45.5727275-04:00 0HLVK713L00KQ:00000001 [INF] Entity Framework Core "3.1.0" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=DWork.CollegeSystem.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null " (9958f5bb)
+2020-05-09T12:44:45.7199097-04:00 0HLVK713L00KQ:00000001 [INF] Executed DbCommand ("41"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[DateOfBirth], [a].[Id], [a].[Created], [a].[CreatedBy], [a].[FirstName], [a].[LastModified], [a].[LastModifiedBy], [a].[LastName], [a].[MainCategory]
+FROM [Authors] AS [a]" (0723d8ff)
+2020-05-09T12:44:45.8110152-04:00 0HLVK713L00KQ:00000001 [INF] Handled GetAuthorsQuery (53b9d127)
+2020-05-09T12:44:45.8263797-04:00 0HLVK713L00KQ:00000001 [INF] Executed action method "DWork.CollegeSystem.WebUI.Controllers.AuthorsController.Get (DWork.CollegeSystem.WebUI)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 502.8249ms. (50a9e262)
+2020-05-09T12:44:45.8376066-04:00 0HLVK713L00KQ:00000001 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[DWork.CollegeSystem.Application.Authors.Queries.GetAuthors.AuthorDto, DWork.CollegeSystem.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-05-09T12:44:45.9320277-04:00 0HLVK713L00KQ:00000001 [INF] Executed action "DWork.CollegeSystem.WebUI.Controllers.AuthorsController.Get (DWork.CollegeSystem.WebUI)" in 750.256ms (afa2e885)
+2020-05-09T12:44:45.9364038-04:00 0HLVK713L00KQ:00000001 [INF] Executed endpoint '"DWork.CollegeSystem.WebUI.Controllers.AuthorsController.Get (DWork.CollegeSystem.WebUI)"' (99874f2b)
+2020-05-09T12:44:45.9551566-04:00 0HLVK713L00KQ:00000001 [INF] Request finished in 995.0382ms 200 application/json; charset=utf-8 (791a596a)
