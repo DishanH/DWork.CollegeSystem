@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace DWork.CollegeSystem.WebUI
 {
-    public static class Program
+    public class Program
     {
         public async static Task Main(string[] args)
         {
@@ -28,7 +28,7 @@ namespace DWork.CollegeSystem.WebUI
                     if (context.Database.IsSqlServer())
                     {
                         context.Database.Migrate();
-                    }                   
+                    }
 
                     var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
 
@@ -37,8 +37,7 @@ namespace DWork.CollegeSystem.WebUI
                 }
                 catch (Exception ex)
                 {
-                    var logger = scope.ServiceProvider.GetRequiredService<ILogger>();
-
+                    var logger = scope.ServiceProvider.GetRequiredService<ILogger<Program>>();
                     logger.LogError(ex, "An error occurred while migrating or seeding the database.");
 
                     throw;
@@ -50,9 +49,15 @@ namespace DWork.CollegeSystem.WebUI
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder =>
-                {
-                    webBuilder.UseStartup<Startup>();
-                });
+            //.UseSerilog() // <- Add this line to use serilog
+            .ConfigureLogging((hostingContext, builder) =>//Serilog file logging
+            {
+                //builder.AddFile("Logs/myapp-{Date}.txt");
+                builder.AddFile(hostingContext.Configuration.GetSection("Logging"));
+            })
+            .ConfigureWebHostDefaults(webBuilder =>
+            {
+                webBuilder.UseStartup<Startup>();
+            });
     }
 }

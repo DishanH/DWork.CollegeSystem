@@ -4,6 +4,7 @@
     <TargetFramework>netstandard2.1</TargetFramework>
     <RootNamespace>DWork.CollegeSystem.Domain</RootNamespace>
     <AssemblyName>DWork.CollegeSystem.Domain</AssemblyName>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
 </Project>

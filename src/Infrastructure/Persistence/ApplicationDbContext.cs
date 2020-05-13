@@ -34,6 +34,10 @@ namespace DWork.CollegeSystem.Infrastructure.Persistence
 
         public DbSet<TodoItem> TodoItems { get; set; }
 
+        public DbSet<Author> Authors { get; set; }
+
+        public DbSet<Course> Courses { get; set; }
+
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
         {
             foreach (var entry in ChangeTracker.Entries<AuditableEntity>())

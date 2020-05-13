@@ -5,10 +5,12 @@ using DWork.CollegeSystem.Application.TodoItems.Commands.UpdateTodoItemDetail;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 
 namespace DWork.CollegeSystem.WebUI.Controllers
 {
-    [Authorize]
+    //[Authorize]
+    [ApiConventionType(typeof(DefaultApiConventions))]
     public class TodoItemsController : ApiController
     {
         [HttpPost]
@@ -18,6 +20,9 @@ namespace DWork.CollegeSystem.WebUI.Controllers
         }
 
         [HttpPut("{id}")]
+        //[ProducesResponseType(StatusCodes.Status204NoContent)]
+        //[ProducesResponseType(StatusCodes.Status400BadRequest)]
+        //[ProducesDefaultResponseType]
         public async Task<ActionResult> Update(int id, UpdateTodoItemCommand command)
         {
             if (id != command.Id)
@@ -31,7 +36,10 @@ namespace DWork.CollegeSystem.WebUI.Controllers
         }
 
         [HttpPut("[action]")]
-        public async Task<ActionResult> UpdateItemDetails(int id, UpdateTodoItemDetailCommand command)
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesDefaultResponseType]
+        public async Task<IActionResult> UpdateItemDetails(int id, UpdateTodoItemDetailCommand command)
         {
             if (id != command.Id)
             {

@@ -7,16 +7,17 @@ using DWork.CollegeSystem.WebUI.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using NSwag;
-using NSwag.Generation.Processors.Security;
-using System.Linq;
+using System;
+using System.IO;
+using System.Reflection;
 
 namespace DWork.CollegeSystem.WebUI
 {
+    //MediatR sample
+    //https://docs.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/microservice-application-layer-implementation-web-api
     public class Startup
     {
         public Startup(IConfiguration configuration)
@@ -42,7 +43,7 @@ namespace DWork.CollegeSystem.WebUI
             services.AddControllersWithViews(options => 
                 options.Filters.Add(new ApiExceptionFilter()));
 
-            services.AddRazorPages();
+            //services.AddRazorPages();
 
             // Customise default API behaviour
             services.Configure<ApiBehaviorOptions>(options =>
@@ -51,24 +52,24 @@ namespace DWork.CollegeSystem.WebUI
             });
 
             // In production, the Angular files will be served from this directory
-            services.AddSpaStaticFiles(configuration =>
-            {
-                configuration.RootPath = "ClientApp/dist";
+            //services.AddSpaStaticFiles(configuration =>
+            //{
+            //    configuration.RootPath = "ClientApp/dist";
+            //});
+            services.AddSwaggerGen(setupAction => {
+                setupAction.SwaggerDoc("CoursesAPISpecification",
+                    new Microsoft.OpenApi.Models.OpenApiInfo
+                    {
+                        Title = "Library API",
+                        Version = "1"
+                    });
+                var xmlCommentFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlCommentFilePath = Path.Combine(AppContext.BaseDirectory, xmlCommentFile);
+
+                setupAction.IncludeXmlComments(xmlCommentFilePath, true);
+
             });
 
-            services.AddOpenApiDocument(configure =>
-            {
-                configure.Title = "DWork.CollegeSystem API";
-                configure.AddSecurity("JWT", Enumerable.Empty<string>(), new OpenApiSecurityScheme
-                {
-                    Type = OpenApiSecuritySchemeType.ApiKey,
-                    Name = "Authorization",
-                    In = OpenApiSecurityApiKeyLocation.Header,
-                    Description = "Type into the textbox: Bearer {your JWT token}."
-                });
-
-                configure.OperationProcessors.Add(new AspNetCoreOperationSecurityScopeProcessor("JWT"));
-            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -94,37 +95,39 @@ namespace DWork.CollegeSystem.WebUI
                 app.UseSpaStaticFiles();
             }
 
-            app.UseSwaggerUi3(settings =>
-            {
-                settings.Path = "/api";
-                settings.DocumentPath = "/api/specification.json";
-            });
-
             app.UseRouting();
 
             app.UseAuthentication();
             app.UseIdentityServer();
             app.UseAuthorization();
-            app.UseEndpoints(endpoints =>
+
+            app.UseSwagger();
+            app.UseSwaggerUI(setupAction =>
             {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller}/{action=Index}/{id?}");
-                endpoints.MapRazorPages();
+                setupAction.SwaggerEndpoint("/swagger/CoursesAPISpecification/swagger.json", "Library API(Courses)");
             });
 
-            app.UseSpa(spa =>
+                app.UseEndpoints(endpoints =>
             {
-                // To learn more about options for serving an Angular SPA from ASP.NET Core,
-                // see https://go.microsoft.com/fwlink/?linkid=864501
-
-                spa.Options.SourcePath = "ClientApp";
-
-                if (env.IsDevelopment())
-                {
-                    spa.UseAngularCliServer(npmScript: "start");
-                }
+                //endpoints.MapControllerRoute(
+                //    name: "default",
+                //    pattern: "{controller}/{action=Index}/{id?}");
+                endpoints.MapControllers();
+                //endpoints.MapRazorPages();
             });
+
+            //app.UseSpa(spa =>
+            //{
+            //    // To learn more about options for serving an Angular SPA from ASP.NET Core,
+            //    // see https://go.microsoft.com/fwlink/?linkid=864501
+
+            //    spa.Options.SourcePath = "ClientApp";
+
+            //    if (env.IsDevelopment())
+            //    {
+            //        spa.UseAngularCliServer(npmScript: "start");
+            //    }
+            //});
         }
     }
 }

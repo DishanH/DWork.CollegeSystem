@@ -10,9 +10,9 @@ namespace DWork.CollegeSystem.Domain.Entities
 
         public int ListId { get; set; }
 
-        public string Title { get; set; }
+        public string Title { get; set; } = string.Empty;
 
-        public string Note { get; set; }
+        public string Note { get; set; } = string.Empty;
 
         public bool Done { get; set; }
 
@@ -20,7 +20,8 @@ namespace DWork.CollegeSystem.Domain.Entities
 
         public PriorityLevel Priority { get; set; }
 
-
+#nullable disable
         public TodoList List { get; set; }
+#nullable restore
     }
 }
